@@ -6,6 +6,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _verticalLover;
     [SerializeField] private float _verticalUpper;
     private float _currentVerticalAngle;
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     private void Update()
     {
         var vertical = -Input.GetAxis("Mouse Y") * _sensivity;

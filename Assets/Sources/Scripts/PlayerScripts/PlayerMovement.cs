@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         var moveDirection = _root.TransformDirection(new Vector3(_horizontal, 0, _vertical));
-        _rigidBody.MovePosition(_rigidBody.transform.position + moveDirection * _speed * Time.fixedDeltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+            _rigidBody.MovePosition(_rigidBody.transform.position + moveDirection * (_speed + 1f) * Time.fixedDeltaTime);
+        else
+            _rigidBody.MovePosition(_rigidBody.transform.position + moveDirection * _speed * Time.fixedDeltaTime);
     }
 }
