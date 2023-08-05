@@ -10,7 +10,6 @@ public class MusicController : MonoBehaviour
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && _musicChecker == false)
         {
             _playerSource.enabled = true;
-            print("ss");
             _playerSource.Play();
             _musicChecker = true;
         }
