@@ -4,7 +4,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private const string HorizontalAxis = "Horizontal";
     private const string VerticalAxis = "Vertical";
-    [SerializeField] private TMPro.TMP_Text _healthText;
     [SerializeField] TMPro.TMP_Text _pointsCount;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Transform _root;
