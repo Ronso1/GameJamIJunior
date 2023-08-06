@@ -5,18 +5,21 @@ public class PlayerMovement : MonoBehaviour
     private const string HorizontalAxis = "Horizontal";
     private const string VerticalAxis = "Vertical";
     [SerializeField] private TMPro.TMP_Text _healthText;
+    [SerializeField] TMPro.TMP_Text _pointsCount;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Transform _root;
     [SerializeField] private GameObject _camera;
     [SerializeField] private float _speed;
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private GameObject _enter;
+    [SerializeField] private GameObject _exit;
     public float health = 100f;
     public int points = 0;
     private float _horizontal;
     private float _vertical;
     private void Update()
-    {
-        _healthText.text = $"Health: {health}";
+    {   
+        _pointsCount.text = $"Points: {points} / 2";
         if (Input.GetKey(KeyCode.Escape))
         {
             GamePause();
@@ -28,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0f) SceneManager.LoadScene("LoseScene");
         _horizontal = Input.GetAxis(HorizontalAxis);
         _vertical = Input.GetAxis(VerticalAxis);
+        if (points == 2)
+        {
+            _enter.SetActive(false);
+            _exit.SetActive(false);
+        }
     }
     private void FixedUpdate()
     {
