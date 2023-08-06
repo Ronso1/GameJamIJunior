@@ -7,7 +7,7 @@ public class DamagePlayer : MonoBehaviour
     {
         if (_player == other)
         {
-            _playerHealth.health -= 100f;
+            _playerHealth.health -= 5f;
             Destroy(transform.gameObject);
         }
     }
