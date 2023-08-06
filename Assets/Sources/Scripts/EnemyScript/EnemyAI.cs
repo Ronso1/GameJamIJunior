@@ -11,7 +11,6 @@ public class EnemyAI : MonoBehaviour
     {
         if (_enemy.remainingDistance <= 1.5f && _enemy.remainingDistance != Mathf.Infinity && _enemy.remainingDistance != 0f && _isTaked == false)
         {
-            print(_enemy.remainingDistance);
             _enemy.isStopped = true;
             _enemyAnim.SetBool("IsHolding", true);
             _goodCube.SetActive(true);
